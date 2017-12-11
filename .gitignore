@@ -1,3 +1,5 @@
 # Created by .ignore support plugin (hsz.mobi)
 *.iml
 /.idea/libraries/libraries.xml
+/.idea/misc.xml
+/.idea/modules.xml
