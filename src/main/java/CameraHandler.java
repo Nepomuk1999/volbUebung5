@@ -17,11 +17,18 @@ public class CameraHandler {
         int red = _camera.imageGetRed(image, _camera.getWidth(), _camera.getWidth() / 2, _camera.getHeight() / 2);
         int green = _camera.imageGetGreen(image, _camera.getWidth(), _camera.getWidth() / 2, _camera.getHeight() / 2);
         int blue = _camera.imageGetBlue(image, _camera.getWidth(), _camera.getWidth() / 2, _camera.getHeight() / 2);
-
-        if (red >= 240 && green < 90 && blue < 90) {
+        System.out.println("red: " + red);
+        System.out.println("green: " + green);
+        System.out.println("blue: " + blue);
+        if (red >= 180 && green < 100 && blue < 100) {
             return true;
         } else {
             return false;
         }
+    }
+
+    public void driveToBall() {
+        int[] image = _camera.getImage();
+
     }
 }

@@ -5,7 +5,7 @@ public class AccelerometerHandler {
 
     private Accelerometer _accelerometer;
     double[] previousAccValues;
-    private static final int ACC_DEVIATION = 10;
+    private static final int ACC_DEVIATION = 0;
 
     public AccelerometerHandler(DifferentialWheels differentialWheels) {
         _accelerometer = differentialWheels.getAccelerometer("accelerometer");

@@ -27,17 +27,17 @@ public class UltimateBallTerminator extends DifferentialWheels {
             //muss gestoppt werden: Ball an der Wand
             if (!accelerometerHandler.isBallAtWall()) {
                 findNextBall();
-            }
-            //Wird ausgeführt wenn Ball erreicht ist
-            if (cameraHandler.ballInFront() && distanceHandler.ballReached()) {
-                ballanceBallHandler.balanceBallTowardsWall();
-            }
-            //Wird ausgeführt wenn Ball nicht erreicht aber gefunden ist
-            if (cameraHandler.ballInFront() && !distanceHandler.ballReached()) {
-
-            }
-            //Wirdimmer uasgeführt: Ball suchen
-            findNextBall();
+            } else
+                //Wird ausgeführt wenn Ball erreicht ist
+                if (cameraHandler.ballInFront() && distanceHandler.ballReached()) {
+                    ballanceBallHandler.balanceBallTowardsWall();
+                } else
+                    //Wird ausgeführt wenn Ball nicht erreicht aber gefunden ist
+                    if (cameraHandler.ballInFront() && !distanceHandler.ballReached()) {
+                        ballanceBallHandler.balanceBallTowardsWall();
+                    } else
+                        //Wirdimmer uasgeführt: Ball suchen
+                        findNextBall();
         }
     }
 
@@ -45,9 +45,7 @@ public class UltimateBallTerminator extends DifferentialWheels {
     }
 
     private void findNextBall() {
-        while (!cameraHandler.ballInFront()) {
-            setSpeed(MINSPEED, TURNSPEED);
-        }
+        setSpeed(MINSPEED, TURNSPEED);
     }
 
     public void driveForward() {
