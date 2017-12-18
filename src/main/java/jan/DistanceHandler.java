@@ -19,10 +19,11 @@ public class DistanceHandler {
 
 
     public boolean ballReached() {
-        if (_distanceSensors[S_FRONT_LEFT].getValue() > 100 && _distanceSensors[S_FRONT_RIGHT].getValue() > 100) {
-            System.out.println("2: " +values[2]);
+        if (_distanceSensors[S_FRONT_LEFT].getValue() > 500 && _distanceSensors[S_FRONT_RIGHT].getValue() > 500) {
+            System.out.println("Left: " + _distanceSensors[S_FRONT_LEFT].getValue() + "Right: " + _distanceSensors[S_FRONT_RIGHT].getValue());
             return true;
         }
+        System.out.println("Left: " + _distanceSensors[S_FRONT_LEFT].getValue() + "Right: " + _distanceSensors[S_FRONT_RIGHT].getValue());
         return false;
     }
 

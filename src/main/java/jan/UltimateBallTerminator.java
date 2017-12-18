@@ -37,23 +37,17 @@ public class UltimateBallTerminator extends DifferentialWheels {
                 Wall = false;
               }
               turnAway();
-            }
-            //muss gestoppt werden: Ball an der Wand
-            if (accelerometerHandler.isBallAtWall() && cameraHandler.ballInFront()) {
+            }else if (accelerometerHandler.isBallAtWall() && cameraHandler.ballInFront()) {
                 System.out.println("Zurück");
-                driveBack();  
+                driveBack(); 
                 Wall = true;
-            } 
-            //Wird ausgeführt wenn Ball erreicht ist
-            if (Wall == false && distanceHandler.ballReached()) {
+            }else if (distanceHandler.ballReached()) {
                 System.out.println("Balance");
                 ballanceBallHandler.balanceBallTowardsWall(); 
-            }
-            if( Wall == false && !distanceHandler.ballReached()){
+            }else if(!distanceHandler.ballReached() && cameraHandler.ballInFront()){
                 System.out.println("to Ball");
                 driveForward();
-            }
-            if(Wall == false && !cameraHandler.ballInFront() && !distanceHandler.ballReached()){
+            }else/**(!cameraHandler.ballInFront() && !distanceHandler.ballReached())**/{
                 System.out.println("find ball");
                 findNextBall(); 
             }
