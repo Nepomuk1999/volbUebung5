@@ -22,7 +22,7 @@ public class AccelerometerHandler {
         //System.out.println("1: " +values[0]);
         System.out.println("2: " +values[1]);
         //System.out.println("3: " +values[2]);
-        if(values[1] > 7.5 || values[1] < -7.5){
+        if(values[1] > 7.5 || values[1] < -7.5 || values[2] > 10){
         return true;
         }
         return false;
