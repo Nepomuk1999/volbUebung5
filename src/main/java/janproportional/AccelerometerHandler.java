@@ -20,7 +20,7 @@ public class AccelerometerHandler {
         double[] values = _accelerometer.getValues();
         //System.out.println(values.length);
         System.out.println("0: " + values[0] + " _______ 1: " + values[1] + " ______ 2: " + values[2]);
-        if(values[1] > 8 || values[1] < -8 || values[2] > 10){
+        if(values[1] > 8 || values[1] < -8 || values[0] > 1.4 || values[0] < -1.4 || (values[0] > 0.1 && values[1] < -5) ){
         return true;
         }
         return false;
