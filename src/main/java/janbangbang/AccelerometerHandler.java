@@ -1,4 +1,4 @@
-package jan;
+package janbangbang;
 
 import com.cyberbotics.webots.controller.Accelerometer;
 import com.cyberbotics.webots.controller.DifferentialWheels;

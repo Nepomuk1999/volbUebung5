@@ -1,4 +1,4 @@
-package jan;
+package janproportional;
 
 import com.cyberbotics.webots.controller.Camera;
 import com.cyberbotics.webots.controller.DifferentialWheels;
@@ -24,10 +24,9 @@ public class CameraHandler {
         int green = Camera.pixelGetGreen(pixel);
         int blue = Camera.pixelGetBlue(pixel);
         int gray = Camera.pixelGetGray(pixel);
-        
         //System.out.println("red: " + red + " green: " + green + " blue: " + blue);
         //System.out.println("gray: " + gray);
-        if (gray < 90) {
+        if (red > 90 && green < 90 && blue < 90 || red > 0 && green == 0 && blue == 0) {
             return true;
         } else {
             return false;
