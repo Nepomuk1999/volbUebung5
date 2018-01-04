@@ -7,7 +7,7 @@ public class AccelerometerHandler {
 
     private Accelerometer _accelerometer;
     double[] previousAccValues;
-    private static final int ACC_DEVIATION = 0;
+    private static final int ACC_DEVIATION = 0; 
 
     public AccelerometerHandler(DifferentialWheels differentialWheels) {
         _accelerometer = differentialWheels.getAccelerometer("accelerometer");
@@ -19,10 +19,8 @@ public class AccelerometerHandler {
         boolean ballatWall = false;
         double[] values = _accelerometer.getValues();
         //System.out.println(values.length);
-        //System.out.println("1: " +values[0]);
-        System.out.println("2: " +values[1]);
-        //System.out.println("3: " +values[2]);
-        if(values[1] > 7.5 || values[1] < -7.5 || values[2] > 10){
+        System.out.println("0: " + values[0] + " _______ 1: " + values[1] + " ______ 2: " + values[2]);
+        if(values[1] > 8 || values[1] < -8 || values[2] > 10){
         return true;
         }
         return false;

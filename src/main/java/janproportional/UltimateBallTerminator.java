@@ -27,19 +27,21 @@ public class UltimateBallTerminator extends DifferentialWheels {
         Wall = false;
     }
 
-    private void run() {
+   private void run() {
         while (step(TIME_STEP) != -1) {
             //wenn
             //System.out.println("WALL: " + Wall);
-            if(Wall == true){
+            if(Wall == true && !distanceHandler.ballReached()){
               //System.out.println(cameraHandler.ballInFront());
               if(false == cameraHandler.ballInFront()){
                 Wall = false;
               }
               turnAway();
+            }else if(Wall == true && distanceHandler.ballReached()){
+              //System.out.println("Zurück");
+              driveBack();
             }else if (accelerometerHandler.isBallAtWall() && cameraHandler.ballInFront()) {
-                //System.out.println("Zurück");
-                driveBack(); 
+                //System.out.println("Wall");
                 Wall = true;
             }else if (distanceHandler.ballReached() && cameraHandler.ballInFront()) {
                 //System.out.println("Balance");
@@ -53,13 +55,17 @@ public class UltimateBallTerminator extends DifferentialWheels {
             }
         }
     }
-
+    
     private void findNextBall() {
         setSpeed(-TURNSPEED, TURNSPEED);
     }
    
    private void turnAway(){
          setSpeed(-TURNSPEED, TURNSPEED);
+   }
+   
+   private void turn(){
+         setSpeed(-TURNSPEED, 0);
    }
    
     public void driveForward() {

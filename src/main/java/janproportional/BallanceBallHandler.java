@@ -18,8 +18,8 @@ public class BallanceBallHandler {
     public void balanceBallTowardsWall() {
         double[] distances = _distanceHandler.getDistanceValues();        
         evaluateSpeed(distances);
-        speedLeft = 600 + speedLeft;
-        speedRight = 600 + speedRight;
+        speedLeft = 400 + speedLeft;
+        speedRight = 400 + speedRight;
         if(speedLeft > maxspeed){
            speedLeft = maxspeed;
         }
